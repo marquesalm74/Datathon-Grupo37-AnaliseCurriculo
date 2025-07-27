@@ -61,7 +61,7 @@ class AnalyseDatabase:
     ############################ Vagas #################################
 
     def get_all_vagas(self) -> List[Dict]:
-        response = supabase.table("vagas").select("*").limit(50000).execute()
+        response = supabase.table("vagas").select("*").limit(1000).execute()
         return response.data if response.data else []
 
     def get_vaga_by_codigo(self, codigo_vaga: str) -> Optional[Dict]:
